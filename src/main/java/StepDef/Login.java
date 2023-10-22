@@ -5,13 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
-import static org.junit.Assert.assertTrue;
+import org.junit.Assert;
 
 public class Login {
     WebDriver driver;
@@ -41,7 +39,7 @@ public class Login {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -49,7 +47,7 @@ public class Login {
     public void userIsLoggedInSuccessfully() {
         WebElement productLabel = driver.findElement(By.className("title"));
         String labelText = productLabel.getText();
-        assertTrue(labelText.equals("Products"));
+        Assert.assertEquals(labelText,"Products");
         driver.quit();
     }
 
