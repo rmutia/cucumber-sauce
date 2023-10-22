@@ -11,8 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-import org.junit.Assert;
-
 public class Logout {
     WebDriver driver;
 
